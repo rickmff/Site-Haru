@@ -2,7 +2,7 @@ import Head from "next/head";
 import Menu from "../components/Menu";
 import SideBarMenu from "../components/SideBarMenu";
 import Hero from "../components/Hero";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import GalleryOfProjects from "../components/GalleryOfProjects";
 import { getAllProjectsForHome } from "../config/api";
 
