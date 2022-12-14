@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { SITE_NAME, HOME_OG_IMAGE_URL } from '../../../config/constants'
+import { SITE_NAME, HOME_OG_IMAGE_URL } from '../../config/constants'
 
 export default function Meta() {
   return (
@@ -21,7 +21,6 @@ export default function Meta() {
         sizes="16x16"
         href="/favicon/favicon-16x16.png"
       />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"

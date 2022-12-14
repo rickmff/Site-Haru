@@ -1,15 +1,20 @@
 const PROJECT_GRAPHQL_FIELDS = `
   slug
   title
-`
+  mediaCollection {
+    items {
+      url
+    }
+  }
+`;
 
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${
           preview
             ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
@@ -18,15 +23,15 @@ async function fetchGraphQL(query, preview = false) {
       },
       body: JSON.stringify({ query }),
     }
-  ).then((response) => response.json())
+  ).then((response) => response.json());
 }
 
 function extractProject(fetchResponse) {
-  return fetchResponse?.data?.projectCollection?.items?.[0]
+  return fetchResponse?.data?.projectCollection?.items?.[0];
 }
 
 function extractProjectEntries(fetchResponse) {
-  return fetchResponse?.data?.projectCollection?.items
+  return fetchResponse?.data?.projectCollection?.items;
 }
 
 export async function getPreviewProjectBySlug(slug) {
@@ -39,8 +44,8 @@ export async function getPreviewProjectBySlug(slug) {
       }
     }`,
     true
-  )
-  return extractProject(entry)
+  );
+  return extractProject(entry);
 }
 
 export async function getAllProjectsWithSlug() {
@@ -52,8 +57,8 @@ export async function getAllProjectsWithSlug() {
         }
       }
     }`
-  )
-  return extractProjectEntries(entries)
+  );
+  return extractProjectEntries(entries);
 }
 
 export async function getAllProjectsForHome(preview) {
@@ -66,15 +71,15 @@ export async function getAllProjectsForHome(preview) {
       }
     }`,
     preview
-  )
-  return extractProjectEntries(entries)
+  );
+  return extractProjectEntries(entries);
 }
 
 export async function getProjectAndMoreProjects(slug, preview) {
   const entry = await fetchGraphQL(
     `query {
       projectCollection(where: { slug: "${slug}" }, preview: ${
-      preview ? 'true' : 'false'
+      preview ? "true" : "false"
     }, limit: 1) {
         items {
           ${PROJECT_GRAPHQL_FIELDS}
@@ -82,11 +87,11 @@ export async function getProjectAndMoreProjects(slug, preview) {
       }
     }`,
     preview
-  )
+  );
   const entries = await fetchGraphQL(
     `query {
       projectCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
-      preview ? 'true' : 'false'
+      preview ? "true" : "false"
     }, limit: 2) {
         items {
           ${PROJECT_GRAPHQL_FIELDS}
@@ -94,9 +99,9 @@ export async function getProjectAndMoreProjects(slug, preview) {
       }
     }`,
     preview
-  )
+  );
   return {
     project: extractProject(entry),
     moreProjects: extractProjectEntries(entries),
-  }
+  };
 }

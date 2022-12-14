@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    loader: 'custom',
+    domains: ["images.ctfassets.net"],
   },
-}
+  reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
+};

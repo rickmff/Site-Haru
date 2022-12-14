@@ -1,21 +1,7 @@
-import { EXAMPLE_PATH } from "../../../config/constants";
+import * as S from "./styles";
 
 export default function Footer() {
   return (
-    <footer>
-      <div>
-        <h3>Statically Generated with Next.js.</h3>
-        <div>
-          <a href="https://nextjs.org/docs/basic-features/pages">
-            Read Documentation
-          </a>
-          <a
-            href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-          >
-            View on GitHub
-          </a>
-        </div>
-      </div>
-    </footer>
+  <S.Footer></S.Footer>
   );
 }
