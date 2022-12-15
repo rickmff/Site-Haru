@@ -2,12 +2,20 @@
 export default {
   title: "light",
   colors: {
-    primary: "#e5556e",
-    secondary: "#444a5a",
-    sucess: "#00bfa5",
-    danger: "#e37a7a",
+    primary: "#5e3d77",
+    secondary: "#2c152e",
+    third: "#4b2b50",
+    fourth: "#aa8ab3",
 
-    background: "#f5f5f5",
-    text: "#333",
+    customLightGrey: "#f0eff7",
+    customLightPink: "#fde6dd",
+    customOrange: "#f2b899",
+    customRed: "#fe0009",
+
+    sucess: "#00bfa5",
+    danger: "#fe0009",
+
+    background: "#f0eff7",
+    text: "#0d0d11",
   },
 };

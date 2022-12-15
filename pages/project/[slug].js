@@ -21,6 +21,7 @@ export async function getStaticProps({ params, preview = false }) {
       project: data?.project ?? null,
       moreProjects: data?.moreProjects ?? null,
     },
+    revalidate: 10
   };
 }
 

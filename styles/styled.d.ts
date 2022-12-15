@@ -7,6 +7,14 @@ declare module 'styled-components' {
     colors: {
       primary: string
       secondary: string
+      third: string
+      fourth: string
+  
+      customLightGrey: string
+      customLightPink: string
+      customOrange: string
+      customRed: string
+
       sucess: string
       danger: string
   
