@@ -10,14 +10,6 @@ declare module 'styled-components' {
       third: string
       fourth: string
   
-      customLightGrey: string
-      customLightPink: string
-      customOrange: string
-      customRed: string
-
-      sucess: string
-      danger: string
-  
       background: string
       text: string
     }

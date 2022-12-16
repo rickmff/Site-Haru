@@ -3,7 +3,7 @@ module.exports = {
   images: {
     domains: ["images.ctfassets.net"],
   },
-  reactStrictMode: true,
+  /* reactStrictMode: true, */
   compiler: {
     styledComponents: true,
   },

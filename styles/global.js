@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import {fonts} from "./fonts"
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -6,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
     cursor: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
-    font-family: 'Neue Montreal';
+    ${fonts.Regular}
+    letter-spacing: .3rem;
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
   }
@@ -62,14 +63,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .cursorHover {
-    background-color: ${(props) => props.theme.colors.background};
-    opacity: 0.5;
+    background-color: ${(props) => props.theme.colors.primary};
+    opacity: 0.8;
   }
 
   .cursorinnerhover {
     width: 50px;
     height: 50px;
     opacity: 0.5;
+  }
+  .expand {
+    animation: cursorAnim .5s forwards;
   }
 `;
 export default GlobalStyle;

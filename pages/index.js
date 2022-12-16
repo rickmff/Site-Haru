@@ -1,25 +1,23 @@
-import SideBarMenu from "../components/SideBarMenu";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import GalleryOfProjects from "../components/GalleryOfProjects";
 import { getAllProjectsForHome } from "../config/api";
 
-export default function Home({ preview, allProjects }) {
+export default function Home({ allProjects }) {
   return (
     <>
-      <SideBarMenu />
-      <Hero />
-      <Layout preview={preview}>
+      <Layout>
+        <Hero />
         <GalleryOfProjects allProjects={allProjects} />
       </Layout>
     </>
   );
 }
 
-export async function getStaticProps({ preview = false }) {
-  const allProjects = (await getAllProjectsForHome(preview)) ?? [];
+export async function getStaticProps() {
+  const allProjects = (await getAllProjectsForHome()) ?? [];
   return {
-    props: { preview, allProjects },
-    revalidate: 10
+    props: { allProjects },
+    revalidate: 10,
   };
 }
