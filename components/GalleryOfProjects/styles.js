@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import { devices } from "../../styles/globalVariables";
 
 export const ProjectsGallery = styled.ul`
   display: flex;
-  perspective: 1000px;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const ProjectCard = styled.li`
-  margin: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
   img {
     border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
@@ -16,6 +20,8 @@ export const ProjectCard = styled.li`
     filter: blur(1px) grayscale(80%);
     transform-style: preserve-3d;
     cursor: none;
+    @media ${devices.laptop} {
+    }
   }
   img:hover {
     cursor: none;
@@ -24,4 +30,10 @@ export const ProjectCard = styled.li`
     filter: blur(0px) grayscale(0) contrast(110%);
     box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
   }
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 42px;
+  display: flex;
+  justify-content: center;
 `;

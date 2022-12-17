@@ -1,9 +1,12 @@
 import Footer from "./Footer";
+import SideBarMenu from "./SideBarMenu";
+import * as S from "./styles";
 
 export default function Layout({ children }) {
   return (
     <>
-      <main>{children}</main>
+      <SideBarMenu/>
+      <S.Container>{children}</S.Container>
       <Footer />
     </>
   );

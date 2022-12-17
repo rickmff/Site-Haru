@@ -1,13 +1,13 @@
 import usePersistedState from "../utils/usePersistedState";
-
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/global";
 import light from "../styles/themes/light";
 import dark from "../styles/themes/dark";
-
-import Meta from "../components/Meta";
-import Menu from "../components/Menu";
-import Cursor from "../components/Cursor";
+import Menu from "../components/Layout/Menu";
+import dynamic from "next/dynamic";
+const Cursor = dynamic(() => import("../components/Cursor"), {
+  ssr: false,
+}) 
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = usePersistedState("theme", light);
@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Meta />
       <GlobalStyle />
       <Cursor />
       <Menu toggleTheme={toggleTheme} />

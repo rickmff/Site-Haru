@@ -7,15 +7,7 @@ export default {
     third: "#5e3d77",
     fourth: "#aa8ab3",
 
-    customLightGrey: "#f0eff7",
-    customLightPink: "#fde6dd",
-    customOrange: "#f2b899",
-    customRed: "#fe0009",
-
-    sucess: "#00bfa5",
-    danger: "#e37a7a",
-
-    background: "#5e3d77",
+    background: "#fde6dd",
     text: "#aa8ab3",
   },
 };

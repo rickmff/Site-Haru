@@ -1,8 +1,7 @@
 import dynamic from "next/dynamic";
-
-const CustomCursor = dynamic(() => import("../../utils/CustomCursor"), {
+const CustomCursor = dynamic(() => import("./CustomCursor"), {
   ssr: false,
-});
+}) 
 
 export default function Cursor() {
   return (
