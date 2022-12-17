@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import {fonts} from "./fonts"
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -7,8 +6,10 @@ const GlobalStyle = createGlobalStyle`
     cursor: none;
     padding: 0;
     margin: 0;
-    ${fonts.Regular}
+    font-family: 'Orbitron', sans-serif;
     letter-spacing: .3rem;
+    background: url("../public/background.jpg");
+    background-size: cover;
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
   }

@@ -34,7 +34,6 @@ export const ProjectCard = styled.li`
 
 export const SectionTitle = styled.h2`
   font-size: 42px;
-  font-family: "Neue Montreal";
   display: flex;
   justify-content: center;
 `;

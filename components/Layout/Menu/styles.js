@@ -5,7 +5,7 @@ export const NavBar = styled.ul`
   justify-content: flex-end;
 `;
 export const MenuItem = styled.li`
-  padding: 0px 5rem;
+  padding: 3rem;
   text-transform: capitalize;
   font-size: 16px;
 `;
