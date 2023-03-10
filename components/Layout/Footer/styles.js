@@ -6,5 +6,4 @@ export const Footer = styled.div`
   left: 0;
   width: 100%;
   height: 20px;
-  background-color: ${props => props.theme.colors.primary};
 `;
